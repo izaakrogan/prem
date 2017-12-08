@@ -54,9 +54,9 @@ export const mergeProps = (stateProps, dispatchProps, ownProps) => {
       dispatch(push({
         pathname: path,
       }));
+      dispatch(modalActions.show());
       document.body.classList.add('has-modal');
       document.documentElement.classList.add('has-modal');
-      dispatch(modalActions.show());
     },
   };
 };
