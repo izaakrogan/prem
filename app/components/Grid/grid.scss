@@ -1,8 +1,10 @@
 .grid-container {
   padding: 0 50px;
   text-align: center;
+
   .text-container {
     margin: 50px;
+
     h2 {
       margin-bottom: 5px;
     }
@@ -32,8 +34,12 @@
   margin-bottom: 50px;
   background-position: center;
   background-size: cover;
-  color:white;
+  color: white;
   text-shadow: 2px 2px 2px #000;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .box-1 {
@@ -45,7 +51,7 @@
 }
 
 .box-3 {
-  background-image: url('/assets/imgs/temporary_markings_1-min.png');
+  background-image: url('/assets/imgs/temporary_markings_1-min.jpg');
 }
 
 .box-4 {
@@ -57,7 +63,7 @@
 }
 
 .box-6 {
-  background-image: url('/assets/imgs/car_park_3-min.png');
+  background-image: url('/assets/imgs/car_park_3-min.jpg');
 }
 
 .box-7 {

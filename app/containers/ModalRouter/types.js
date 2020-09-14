@@ -9,6 +9,15 @@ export type ModalState = {
 };
 
 export type ModalActions =
-    { type: 'modal/SHOW_MODAL' }
-  | { type: 'modal/RESET_MODAL' }
-  ;
+  | {type: 'modal/SHOW_MODAL'}
+  | {type: 'modal/RESET_MODAL'};
+
+type Location = {
+  pathname: string,
+  search: string,
+  hash: string,
+};
+
+export type RouterState = {
+  location: Location,
+};

@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Motion, spring } from 'react-motion';
-import { replace } from 'react-router-redux';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {Motion, spring} from 'react-motion';
+import {replace} from 'react-router-redux';
 
 import * as modalActions from './actions';
-import * as alertActions from '../AlertRouter/actions';
-
-import PageRouter from '../PageRouter';
+import Routes from './routes';
 
 class ModalRouter extends Component {
   constructor(props) {
@@ -16,8 +14,8 @@ class ModalRouter extends Component {
   }
 
   getDisplay(x) {
-    const { isVisible } = this.props;
-    return (!isVisible && x < 0.25) ? 'none' : 'block';
+    const {isVisible} = this.props;
+    return !isVisible && x < 0.25 ? 'none' : 'block';
   }
 
   getStyle() {
@@ -28,11 +26,8 @@ class ModalRouter extends Component {
 
   render() {
     return (
-      <Motion
-        defaultStyle={{ x: 0 }}
-        style={this.getStyle()}
-      >
-        {({ x }) => (
+      <Motion defaultStyle={{x: 0}} style={this.getStyle()}>
+        {({x}) => (
           <div
             style={{
               position: 'fixed',
@@ -46,50 +41,39 @@ class ModalRouter extends Component {
               overflow: 'scroll',
             }}
             onClick={this.props.closeModal}
-            className="modal"
-          >
-            <PageRouter
+            className='modal'>
+            <Routes
               history={this.props.history}
               closeModal={this.props.closeModal}
             />
           </div>
-        )
-        }
+        )}
       </Motion>
     );
   }
 }
 
-export const mapStateToProps = state => ({
+export const mapStateToProps = (state) => ({
   isVisible: state.modalRouter.isVisible,
 });
 
-export const mergeProps = (
-  stateProps,
-  dispatchProps,
-  ownProps,
-) => {
-  const { dispatch } = dispatchProps;
+export const mergeProps = (stateProps, dispatchProps, ownProps) => {
+  const {dispatch} = dispatchProps;
 
   return {
     ...stateProps,
     ...ownProps,
     closeModal: () => {
-      dispatch(replace({
-        pathname: '/',
-      }));
+      dispatch(
+        replace({
+          pathname: '/',
+        }),
+      );
       dispatch(modalActions.reset());
       document.body.classList.remove('has-modal');
       document.documentElement.classList.remove('has-modal');
     },
-    openAlert: () => {
-      dispatch(alertActions.show());
-    },
   };
 };
 
-export default connect(
-  mapStateToProps,
-  undefined,
-  mergeProps,
-)(ModalRouter);
+export default connect(mapStateToProps, undefined, mergeProps)(ModalRouter);

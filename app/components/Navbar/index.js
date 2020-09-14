@@ -1,11 +1,13 @@
 import React from 'react';
 
 const Navbar = () => (
-  <div className="navbar">
-    <img src="/assets/imgs/premier_logo.png" alt="" />
-    <div className="contact-info">
+  <div className='navbar'>
+    <img src='/assets/imgs/premier_logo.jpg' alt='' />
+    <div className='contact-info'>
       <li>+01740 622518</li>
-      <li>kelly@premier-roadmarkings.co.uk</li>
+      <a className='flat-link' href='mailto:kelly@premier-roadmarkings.co.uk'>
+        <li>kelly@premier-roadmarkings.co.uk</li>
+      </a>
     </div>
   </div>
 );

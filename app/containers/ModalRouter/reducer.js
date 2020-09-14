@@ -1,20 +1,20 @@
 /* @flow */
 
-import type { ModalState, ModalActions } from './types';
+import type {ModalState, ModalActions} from './types';
 import * as c from './constants';
 
-const initialState:ModalState = {
+const initialState: ModalState = {
   transparent: true,
   isVisible: false,
   animated: false,
   route: undefined,
-  text: undefined
+  text: undefined,
 };
 
 export default function (
-  state:ModalState = initialState,
-  action:ModalActions
-):ModalState {
+  state: ModalState = initialState,
+  action: ModalActions,
+): ModalState {
   switch (action.type) {
     case c.SHOW_MODAL:
       return {
@@ -27,7 +27,7 @@ export default function (
       };
     default:
       return {
-        ...state
+        ...state,
       };
   }
 }
