@@ -10,7 +10,7 @@ const RoadMarkings = (props) => (
       Close
     </button>
     <h2>Policy Documents</h2>
-    <p>See below for our policy documents. Links will open in new window</p>
+    <p>See below for our policy documents. Links will open in a new window</p>
     <ul>
       <li>
         <a

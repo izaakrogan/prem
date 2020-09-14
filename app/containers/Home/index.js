@@ -8,8 +8,8 @@ export default function Home(props) {
     <div>
       <Carousel>
         <div className='landing-img landing-img__1'>
-          <h1>PREMIER ROADMARKINGS Ltd</h1>
-          <h2>The UK`s Premier Road Marking Company</h2>
+          <h1>PREMIER ROADMARKINGS LTD</h1>
+          <h2>The Premier Road Marking Company</h2>
         </div>
         <div className='landing-img landing-img__2'>
           <h2>

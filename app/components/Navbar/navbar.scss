@@ -6,17 +6,20 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
+
   img {
     height: 50px;
   }
+
   .contact-info {
     display: flex;
     flex-direction: row;
+
     li {
       font-size: 20px;
       margin-right: 30px;
       list-style: none;
-      color:#999;
+      color: #333;
     }
   }
 }
@@ -26,6 +29,7 @@
     padding: 20px;
     display: block;
     height: auto;
+
     .contact-info {
       display: block;
       line-height: 1.3;

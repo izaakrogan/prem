@@ -53,7 +53,7 @@ export default class Footer extends React.Component {
       <div className='footer-container'>
         <div className='footer-container-content'>
           <div className='contact-info'>
-            <h3>+01740 622518</h3>
+            <h3>01740 622518</h3>
             <h3 href='mailto:kelly@premier-roadmarkings.co.uk'>
               <a className='flat-link'>kelly@premier-roadmarkings.co.uk</a>
             </h3>
@@ -66,7 +66,7 @@ export default class Footer extends React.Component {
               <h3>TS21 3EE</h3>
             </div>
             <h3 onClick={() => this.props.openModal('/policy')}>
-              <a className='flat-link'>Policy documents</a>
+              <a className='flat-link'>Policy Documents</a>
             </h3>
             <img src='assets/imgs/credentials/credentials.png' alt='CHAS' />
           </div>

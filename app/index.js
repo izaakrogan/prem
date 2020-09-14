@@ -1,9 +1,9 @@
 import 'whatwg-fetch';
 
-import { AppContainer } from 'react-hot-loader';
+import {AppContainer} from 'react-hot-loader';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createHashHistory } from 'history';
+import {createHashHistory} from 'history';
 
 import App from './main';
 import createStore from './store';
@@ -17,25 +17,23 @@ import createStore from './store';
  * - https://git.io/v9CCL
  */
 const history = createHashHistory();
-const store = createStore({ history });
+const store = createStore({history});
 
 const appHtmlAppend = document.getElementById('root');
 
-const render = Component => {
+const render = (Component) => {
   return ReactDOM.render(
     <AppContainer>
       <Component store={store} history={history} />
     </AppContainer>,
-    appHtmlAppend
+    appHtmlAppend,
   );
 };
 
-if(appHtmlAppend === null) {
+if (appHtmlAppend === null) {
   // do nothing
 } else {
   require('babel-polyfill');
-  const appSagas = require('./containers/App/sagas').default;
-  appSagas({history}).map(store.runSaga);
   render(App);
 }
 

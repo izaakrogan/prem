@@ -1,6 +1,5 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import { routerMiddleware } from 'react-router-redux'
-import createSagaMiddleware from 'redux-saga';
+import {createStore, applyMiddleware, compose} from 'redux';
+import {routerMiddleware} from 'react-router-redux';
 
 import rootReducer from './reducers';
 
@@ -11,24 +10,15 @@ import rootReducer from './reducers';
  * - https://github.com/reactjs/react-redux/releases/tag/v2.0.0
  */
 export default function configureStore(injectParams = {}) {
+  const middlewares = [routerMiddleware(injectParams.history)];
 
-  const sagaMiddleware = createSagaMiddleware();
-
-  const middlewares = [
-    sagaMiddleware,
-    routerMiddleware(injectParams.history)
-  ];
-
-  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+  const composeEnhancers =
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
   const store = createStore(
     rootReducer,
-    composeEnhancers(
-      applyMiddleware(...middlewares),
-    )
+    composeEnhancers(applyMiddleware(...middlewares)),
   );
-
-  store.runSaga = sagaMiddleware.run;
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
@@ -39,4 +29,4 @@ export default function configureStore(injectParams = {}) {
   }
 
   return store;
-};
+}
