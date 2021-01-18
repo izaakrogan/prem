@@ -19,7 +19,7 @@ const RoadMarkings = (props) => (
       temporary tape systems
     </p>
     <Carousel className='modal__carousel'>
-      <img src='/assets/imgs/temporary_markings_1-min.jpg' />
+      <img src='/assets/imgs/temp.jpg' />
     </Carousel>
   </div>
 );
